@@ -15,5 +15,5 @@ model = RandomForestClassifier()
 model.fit(X, y)
 
 # Save model
-joblib.dump(model, 'model/iris_model.pkl')
+joblib.dump(model, 'model/model.pkl')
 print(" Iris model trained and saved.")
