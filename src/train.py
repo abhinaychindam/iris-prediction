@@ -2,7 +2,7 @@ import pandas as pd
 import joblib
 
 # Load trained model
-model = joblib.load('model/iris_model.pkl')
+model = joblib.load('model/model.pkl')
 
 # Example input (sepal length, sepal width, petal length, petal width)
 sample = pd.DataFrame({
