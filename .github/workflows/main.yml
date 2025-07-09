@@ -23,6 +23,10 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
+    - name: Clean old model file if exists
+      run: |
+        rm -f model/model.pkl
+
     - name: Train Iris Model
       run: |
         python src/train.py
