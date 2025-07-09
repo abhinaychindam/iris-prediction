@@ -1,19 +1,18 @@
+
 import pandas as pd
-from sklearn.ensemble import RandomForestClassifier
 import joblib
 
-# Load iris data
-df = pd.read_csv('data/iris.data', header=None)
-df.columns = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']
+# Load trained model
+model = joblib.load('model/model.pkl')
 
-# Features and target
-X = df.drop('species', axis=1)
-y = df['species']
+# Example input (sepal length, sepal width, petal length, petal width)
+sample = pd.DataFrame({
+    'sepal_length': [5.1],
+    'sepal_width': [3.5],
+    'petal_length': [1.4],
+   'petal_width': [0.2]
+})
 
-# Train model
-model = RandomForestClassifier()
-model.fit(X, y)
-
-# Save model
-joblib.dump(model, 'model/model.pkl')
-print(" Iris model trained and saved.")
+# Predict species
+prediction = model.predict(sample)[0]
+print(f" Predicted Species: {prediction}")
