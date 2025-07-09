@@ -16,4 +16,4 @@ model.fit(X, y)
 
 # Save model
 joblib.dump(model, 'model/iris_model.pkl')
-print("✅ Iris model trained and saved.")
+print(" Iris model trained and saved.")
